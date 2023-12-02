@@ -29,7 +29,6 @@ export class HeaderComponent {
   }
   toggleSorts(): boolean {
     this.sortsAtTop = !this.sortsAtTop;
-    console.log(this.sortsAtTop)
     return this.sortsAtTop;
   }
   

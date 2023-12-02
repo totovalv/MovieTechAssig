@@ -6,10 +6,12 @@ import { filter } from 'rxjs';
 import { Movie } from 'src/interfaces/movie.model';
 import { SearchServiceService } from 'src/services/search-service/search-service.service';
 import { WishlistService } from 'src/services/wishlist-service/wishlist.service';
+import { ChangeDetectionStrategy } from '@angular/core';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent implements OnInit {
   originalMovieData = this.searchService.movieData;
@@ -30,7 +32,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private location: Location,
     public searchService: SearchServiceService,
-    public wishlistService: WishlistService,
+    public wishlistService: WishlistService, 
     private router: Router
   ) {
     this.currentURL = '';
@@ -63,7 +65,6 @@ export class HomeComponent implements OnInit {
   }
   toggleSorts(): boolean {
     this.sortsAtTop = !this.sortsAtTop;
-    console.log(this.sortsAtTop);
     return this.sortsAtTop;
   }
 
@@ -136,7 +137,9 @@ export class HomeComponent implements OnInit {
     this.applyFilterAndSort(this.originalMovieData);
   }
   isWishlistEmpty(): boolean {
-    return this.currentSort === 'wishlist' && this.movieData.length === 0;
+    const isEmpty = this.wishlistService.isWishlistEmpty(); // Use the injected service
+    console.log(isEmpty);
+    return isEmpty;
   }
 
   isSortActive(

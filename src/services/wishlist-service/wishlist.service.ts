@@ -31,4 +31,8 @@ export class WishlistService {
   isInWishlist(movieId: string): boolean {
     return this.getWishlist().some((m: Movie) => m.id === movieId);
   }
+
+  isWishlistEmpty(): boolean {
+    return this.getWishlist().length === 0;
+  }
 }

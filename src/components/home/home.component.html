@@ -19,16 +19,16 @@
     <button class="buttonSortRelease" (click)="sortByReleaseDateNewest()" [disabled]="isSortActive('releaseDateNw')">
       Sort by Release Date (Newest)
     </button>
-    <button class="buttonSortWishlist" (click)="sortByWishlist()" [disabled]="isSortActive('wishlist')">
+    <button class="buttonSortWishlist" *ngIf="!isWishlistEmpty()" (click)="sortByWishlist()" [disabled]="isSortActive('wishlist')">
       Sort by Wishlist
     </button>
     <button class="buttonSortClear" (click)="clearSort()" [disabled]="!currentSort">
       Clear Sort
     </button>
   </div>
-  <app-movie-card *ngIf="!isHome" class="container"></app-movie-card>
-
-  <div *ngIf="isWishlistEmpty() && isHome" class="wishlist-message">
-    There are no movies in the WishList.
+  <div  class="wishlist-content">
+    <app-movie-card class="container"></app-movie-card>
   </div>
+
+ 
 </div>
