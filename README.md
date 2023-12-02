@@ -5,7 +5,8 @@ This Angular project allows users to explore a collection of movies, view detail
 ## Getting Started
 
 ### Prerequisites
-- Angular CLI (version 16.2.2)
+- <img src="https://img.shields.io/badge/Node.js-Required-brightgreen" alt="Node.js Required"/>
+- <img src="https://img.shields.io/badge/Angular%20CLI-16.2.2-blue" alt="Angular CLI 16.2.2"/>
 
 ### Installation
 1. Clone the repository.
@@ -53,7 +54,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 - End-to-end tests: Run `ng e2e`.
 
 ### Further Help
-For more help on the Angular CLI, use `ng help` or check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+For more help on the Angular CLI, use <img src="https://img.shields.io/badge/Angular%20CLI-Help-red" alt="Angular CLI Help"/> or check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 ## Contributing
 Feel free to contribute to the project. Please follow the [contribution guidelines](CONTRIBUTING.md).
