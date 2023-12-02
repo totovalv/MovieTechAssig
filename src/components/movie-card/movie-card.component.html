@@ -1,0 +1,20 @@
+
+<div class="movieCard" *ngFor="let movie of movieData" >
+  <img (click)="navigateToMovieDetail(movie.id)" class="movieImg" src="{{ movie.img }}" alt="{{ movie.title }}" />
+  <div class="dataDescription">
+    <div class="cardHeader">
+      <p (click)="navigateToMovieDetail(movie.id)" class="movieTitle">{{ movie.title }}</p>
+      <h5 class="onWishList" *ngIf=" wishlistService.isInWishlist(movie.id)">On my watchlist</h5>
+    </div>
+    <button class="wishlistBtn" (click)="toggleWishlist(movie)"
+            [class.removeWishlist]="wishlistService.isInWishlist(movie.id)">
+      {{ wishlistService.isInWishlist(movie.id) ? 'Remove from Wishlist' : 'Add to Wishlist' }}
+    </button>
+    <div (click)="navigateToMovieDetail(movie.id)">
+      <p class="movieDataItem">Rating: {{ movie.rating }}</p>
+      <p class="movieDataItem">Duration: {{ movie.duration }}</p>
+      <p class="movieDataItem">Release Date: {{ movie.releaseDate }}</p>
+      <p class="movieDataItem">Genre: {{ movie.genre.join(", ") }}</p>
+    </div>
+  </div>
+</div>

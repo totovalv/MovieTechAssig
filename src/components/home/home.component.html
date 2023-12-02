@@ -1,0 +1,34 @@
+
+<div class="search-container">
+  <app-header class="header" ></app-header>
+  <div *ngIf="toggleSorts()" class="toggleBtn" (click)="toggleSorts()">Sorts Top</div>
+  <div *ngIf="toggleSorts()" class="toggleBtnBottom" (click)="toggleSorts()">Sorts Bottom</div>
+
+</div>
+<div class="homeContainer" [class.homeContainerSortsTop]="toggleSorts()">
+  <div class="buttonsContainer" [class.buttonsContainerToggleOn]="!toggleSorts()">
+    <button class="buttonSort" (click)="sortByTitleAz()" [disabled]="isSortActive('titleAz')">
+      Sort by Title A-Z
+    </button>
+    <button class="buttonSort" (click)="sortByTitleZa()" [disabled]="isSortActive('titleZa')">
+      Sort by Title Z-A
+    </button>
+    <button class="buttonSortRelease" (click)="sortByReleaseDateOldest()" [disabled]="isSortActive('releaseDateOl')">
+      Sort by Release Date (Oldest)
+    </button>
+    <button class="buttonSortRelease" (click)="sortByReleaseDateNewest()" [disabled]="isSortActive('releaseDateNw')">
+      Sort by Release Date (Newest)
+    </button>
+    <button class="buttonSortWishlist" (click)="sortByWishlist()" [disabled]="isSortActive('wishlist')">
+      Sort by Wishlist
+    </button>
+    <button class="buttonSortClear" (click)="clearSort()" [disabled]="!currentSort">
+      Clear Sort
+    </button>
+  </div>
+  <app-movie-card *ngIf="!isHome" class="container"></app-movie-card>
+
+  <div *ngIf="isWishlistEmpty() && isHome" class="wishlist-message">
+    There are no movies in the WishList.
+  </div>
+</div>

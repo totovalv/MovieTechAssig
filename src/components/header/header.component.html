@@ -1,0 +1,31 @@
+<div class="container-search">
+
+  <div class="search-container">
+    <img  *ngIf="isMoviePath" class="homeIcon" (click)="navigateHome()" src="../../assets/icon.png" alt="home">
+    <img  *ngIf="isHome" class="hiddenIcon"src="../../assets/hidden.svg" alt="search">
+    <input
+    *ngIf="isHome"
+    class="inputSearch"
+    type="text"
+    placeholder="Search by title..."
+    [(ngModel)]="searchTitle"
+    (input)="onSearchInputChange($event)"
+  />
+  <button *ngIf="isHome" class="buttonSearch" (click)="searchByTitle(null)">
+    <img class="imgSearchIcon" src="../../assets/search.svg" alt="search" />
+  </button>
+  <button *ngIf="isMoviePath" class="buttonSearchMovie" (click)="navigateHome()">
+    <img class="imgSearchIcon" src="../../assets/search.svg" alt="search" />
+  </button>
+</div>
+  <div class="filterSearchContainerTop" *ngIf="toggleSorts()" >
+    
+  <div
+  class="filterSearch"
+  *ngIf="searchTitle !== ''"
+  (click)="searchByTitle('')"
+  ><span class="searchParagraph">Current Search : {{ searchTitle }}</span><span class="closeBtn">x</span></div
+  >
+</div>
+
+</div>

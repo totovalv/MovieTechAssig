@@ -1,0 +1,41 @@
+<div class="container">
+
+  <app-header></app-header>
+  <div class="detailContainer" *ngIf="movieDetails">
+    <div class="titleContainer">
+      <h2 class="title">{{ movieDetails.title }}</h2>
+      <p class="detailParagraph">{{ movieDetails.rating }}</p>
+    </div>
+    
+    <div class="details">
+      <img 
+      class="img"
+      src="{{ movieDetails.img }}"
+      alt="{{ movieDetails.title }}"
+      />
+      <div class="detailBox">
+        <div class="boxDescription">
+          <div class="detailDescription">
+            <div class="textDescription">
+              {{ movieDetails.description }}
+            </div>
+          </div>
+          <div class="detailChunck">
+            <p class="detailParagraph">{{ movieDetails.duration }}</p>
+            <p class="detailParagraph">{{ movieDetails.releaseDate }}</p>
+            <p class="detailParagraph">{{ movieDetails.genre.join(", ") }}</p>
+          </div>
+        </div>
+        <iframe
+        class="video"
+        [src]="safeTrailerLink"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+  
+</div>

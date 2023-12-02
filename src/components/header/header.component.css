@@ -1,0 +1,89 @@
+.search-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  gap: 1rem;
+}
+
+.inputSearch {
+  height: 100%;
+  border: 1px solid gray;
+  height: 100%;
+  width: 39%;
+  padding-left: 1rem;
+  border-radius: 0.5rem;
+  width: 20rem;
+}
+.buttonSearch {
+  height: 100%;
+  padding: 0px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+}
+.buttonSearchMovie{height: 100%;
+  padding: 0px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  transition: box-shadow .1s, transform .3s ease-out;  
+}
+  .buttonSearchMovie:hover{
+    box-shadow: 0px 0px 50px rgba(105, 39, 102, 0.527);
+    transform: translatey(2px); 
+  }
+.imgSearchIcon {
+  width: 50px;
+  height: 46px;
+}
+
+.filterSearchContainerTop{
+  position: absolute;
+  top: 2.5rem;
+  left: 3.1rem;
+}
+.filterSearchContainerId {
+  position: absolute;
+  top: 6rem ;
+  left: 23.2rem;
+}
+.filterSearch {
+  background: lightblue;
+  padding: 0.4rem;
+  margin: 0px;
+  border-radius: 0.2rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: baseline;
+  border: none
+}
+.closeBtn {
+  text-transform: lowercase;
+  margin: 0px;
+  font-weight: 500;
+}
+.searchParagraph {
+  margin: 0px;
+}
+.homeIcon{
+  width: 5%;
+  background: white;
+  border-radius: 50%;
+  transition: box-shadow .1s, transform .3s ease-out;  
+}
+.homeIcon:hover{
+  box-shadow: 0px 0px 50px rgba(105, 39, 102, 0.527);
+  transform: translatey(2px); 
+}
+.hiddenIcon{
+  width: 5%;
+  border-radius: 50%;
+}
+.container-search{
+  margin: 1.5rem;
+}
